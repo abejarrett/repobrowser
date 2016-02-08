@@ -26,6 +26,9 @@
               </h4>
               <span ng-if="!error" class="badge">{{repoList.length}}&nbsp;Repositories</span>
               <span ng-if="error" class="badge">0&nbsp;Repositories</span>
+              <a ng-if="linkheaders.next!=null" ng-click="nextPage()">Next</a>
+              <a ng-if="linkheaders.prev!=null" ng-click="prevPage()">Prev</a>
+              <a ng-if="linkheaders.last!=null" ng-click="lastPage()">Last</a>
           </span>
       </form>
 
@@ -41,7 +44,7 @@
         </div>
         </div>
 
-        <div ng-if="!error" ng-repeat="repo in repoList | orderBy:'-forks_count'" class="list-group-item ">
+        <div ng-if="!error" ng-repeat="repo in repoList | orderBy:'-forks_count'| startFrom:(currentPage - 1) * pageSize|limitTo: pageSize" class="list-group-item ">
 
             <div class="row">
                 <div class="col-md-2">
@@ -80,6 +83,10 @@
             </div>
         </div>
     </div>
+
+    <uib-pagination total-items="repoList.length" ng-model='currentPage' items-per-page='pageSize' boundary-links="true">
+    </uib-pagination>
+
   </div>
 </div>
 </div>
