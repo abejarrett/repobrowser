@@ -4,6 +4,8 @@ Introduction:
 
 This is a simple onepage app to provide repository browser by org name, and allows the user the abilty to view the commits associated with a particular repository of the organization.
 
+Rate limiting is in effect as the API is not using authentication.  Didn't get around to adding authentication to allow for more than 500 requests an hour.  Only doing look ups when user hits the enter key to reduce likelyhood of hitting the limit in an hour.
+
 Framework used:
 
 This application leverages the skeleton of Angualr-seed framework to get up and running quickly.  This application assumes Node.js and node package manager are installed.
@@ -19,18 +21,22 @@ In order to install this application and get it running, following these steps.
 
 3.  Install Node.js
 
-4.  Install node package manager.
+4.  Install node package manager with "npm install"
+
+4.5 Install the web server that comes with Angular-seed globally as follows:
+    sudo npm install -g http-server
 
 5.  cd to the directory <projname>/app  and run the following:
     npm start
 
 6.  The the webserver will start, and install any packages missing, bower, karma, etc.
+    There are more packages than needed in the project as this project is based on the angular-seek skeleton.
 
 7.  Once the server is up on port 8000, the default for this scenario, open a browser with:
-    localhost:8000/app/index.html
+    localhost:8000/app/index.html, to see the page render.
 
 
-Test Instructions:
+Test Instructions: (manual tests to very correct behavior)
 
 1.  Launch the web app using "npm start" from the app root direction (i.e. repobrowser/app)
     Verify:  loading localhost:8000/app/index.html in browser address bar should render the web app displaying page title, Organization name edit field. and and empty row below.
@@ -49,6 +55,9 @@ Test Instructions:
 
 5.  Select any row and click on the repository name.
     Verify a new browser window is opened and the repository is loaded in GitHub.
+
+6.  notice that Next, Prev and Last links are displayed next to the numbmer of repositories found.
+    Verify that clicking each of the links respectively redraws the page and removing from view those links which do not apply to the give pagination state.
 
 
 
