@@ -23,16 +23,16 @@ In order to install this application and get it running, following these steps.
 
 4.  Install node package manager with "npm install"
 
-4.5 Install the web server that comes with Angular-seed globally as follows:
+5. Install the web server that comes with Angular-seed globally as follows:
     sudo npm install -g http-server
 
-5.  cd to the directory <projname>/app  and run the following:
+6.  cd to the directory <projname>/app  and run the following:
     npm start
 
-6.  The the webserver will start, and install any packages missing, bower, karma, etc.
+7.  The the webserver will start, and install any packages missing, bower, karma, etc.
     There are more packages than needed in the project as this project is based on the angular-seek skeleton.
 
-7.  Once the server is up on port 8000, the default for this scenario, open a browser with:
+8.  Once the server is up on port 8000, the default for this scenario, open a browser with:
     localhost:8000/app/index.html, to see the page render.
 
 
