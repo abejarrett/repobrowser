@@ -2,11 +2,6 @@
 
 angular.module('GHRepoBrowserApp.controllers',[]).
 
-filter('startFrom',function(){
-   return function(data, start){
-    return data.slice(start);
- }
-}).
   controller('repoController', function($scope, ghAPIservice) {
 
     $scope.repoList = [];

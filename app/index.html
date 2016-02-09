@@ -44,7 +44,7 @@
         </div>
         </div>
 
-        <div ng-if="!error" ng-repeat="repo in repoList | orderBy:'-forks_count'| startFrom:(currentPage - 1) * pageSize|limitTo: pageSize" class="list-group-item ">
+        <div ng-if="!error" ng-repeat="repo in repoList | orderBy:'-forks_count'" class="list-group-item ">
 
             <div class="row">
                 <div class="col-md-2">
@@ -83,10 +83,6 @@
             </div>
         </div>
     </div>
-
-    <uib-pagination total-items="repoList.length" ng-model='currentPage' items-per-page='pageSize' boundary-links="true">
-    </uib-pagination>
-
   </div>
 </div>
 </div>
