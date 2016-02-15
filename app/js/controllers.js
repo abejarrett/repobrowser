@@ -42,19 +42,19 @@ angular.module('GHRepoBrowserApp.controllers',[]).
     $scope.nextPage = function () {
       var url = $scope.linkheaders.next;
       getorgrepos(url);
-      console.log(url);
+
     }
 
     $scope.prevPage = function () {
       var url = $scope.linkheaders.prev;
       getorgrepos(url);
-      console.log("clicked prev page");
+
     }
 
     $scope.lastPage = function () {
-      var url = $scope.linkheaders.next;
+      var url = $scope.linkheaders.last;
       getorgrepos(url);
-      console.log (url);
+
     }
 
  //get the name once enter key is pressed
